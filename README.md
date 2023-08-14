@@ -19,7 +19,7 @@ Created By: Philippe Smeets
 
 ## Links
 
-- [Documentation](https://github.com/Knightplayzz/clash-of-clans)
+- [Documentation](https://github.com/Knightplayzz/clash-of-clans/blob/main/documentation.md)
 - [Clash of Clans Developer Website](https://developer.clashofclans.com/)
 - [Clash of Clans API Community Discord](https://discord.gg/Eaja7gJ)
 
