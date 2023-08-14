@@ -27,7 +27,7 @@ const { getBuilderBaseLeagues } = require('./functions/rankings/getBuilderBaseLe
 const { getWarLeagueById } = require('./functions/rankings/getWarLeagueById');
 const { getLeagueById } = require('./functions/rankings/getLeagueById');
 const { getBuilderBaseLeagueById } = require('./functions/rankings/getBuilderBaseLeagueById');
-const { getCapitalLeagueById } = require('./functions/rankings/getCaptialLeagueById');
+const { getCapitalLeagueById } = require('./functions/rankings/getCapitalLeagueById');
 
 const { getSeasonId } = require('./functions/rankings/getSeasonId')
 const { getRankingBySeasonId } = require('./functions/rankings/getRankingBySeasonId');

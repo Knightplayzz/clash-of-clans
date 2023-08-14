@@ -24,7 +24,6 @@ async function getRankingBySeasonId(seasonId, limit) {
         var fetchUrl = `https://api.clashofclans.com/v1/leagues/29000022/seasons/${seasonId}?limit=${limitConvertString}`;
     }
 
-    return { "error": "405", "reason": "There is something wrong with the clash of clans api. This is something that only Clash Of Clans can fix. Sorry.", "message": "internal error" }
     const headers = { 'Authorization': `Bearer ${authToken}` };
     const response = await fetch(fetchUrl, { headers });
     const data = await response.json();
