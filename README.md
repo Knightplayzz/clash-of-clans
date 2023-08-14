@@ -28,7 +28,7 @@ Created By: Philippe Smeets
 ```javascript
 const client = require('clash-of-clans-node');
 async function myFunction() {
-    await client.login(auth);
+    await client.login('YOUR-TOKEN-HERE');
     const clan = await client.getClan('#2GLVC9GYV');
     console.log(`${clan.name} (${clan.tag})`);
 }
