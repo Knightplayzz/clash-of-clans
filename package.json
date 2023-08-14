@@ -1,6 +1,6 @@
 {
-  "name": "clash-of-clans",
-  "version": "1.0.0",
+  "name": "clash-of-clans-node",
+  "version": "1.0.1",
   "type": "commonjs",
   "description": "npm package that connects to the clash of clans api to get information. Clans, player data ect.",
   "main": "index.js",
@@ -23,9 +23,6 @@
     "url": "https://github.com/Knightplayzz/clash-of-clans/issues"
   },
   "homepage": "https://github.com/Knightplayzz/clash-of-clans#readme",
-  "devDependencies": {
-    "@types/node": "^20.4.10"
-  },
   "dependencies": {
     "node-fetch": "^2.6.7"
   }

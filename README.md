@@ -2,8 +2,8 @@
  <img src="https://1000logos.net/wp-content/uploads/2021/02/Clash-of-Clans-logo.png" height="200px"  alt="Clash Of Clans"/>
  <br>
  <p>A light-weight module that makes <a href="https://developer.clashofclans.com/">Clash Of Clans API</a> become easy.</p>
- <a href="https://packagephobia.now.sh/result?p=clash-of-clans"><img src="https://badgen.net/packagephobia/install/clash-of-clans" alt="Current version"></a>
- <a href="https://www.npmjs.com/package/clash-of-clans"><img src="https://img.shields.io/npm/v/clash-of-clans" alt="Install size"></a>
+ <a href="https://packagephobia.now.sh/result?p=clash-of-clans-node"><img src="https://badgen.net/packagephobia/install/clash-of-clans-node" alt="Current version"></a>
+ <a href="https://www.npmjs.com/package/clash-of-clans-node"><img src="https://img.shields.io/npm/v/clash-of-clans-node" alt="Install size"></a>
  <br>
 </div>
 
@@ -15,18 +15,18 @@ Created By: Philippe Smeets
 
 ## Installation
 
-`npm install clash-of-clans`
+`npm install clash-of-clans-node`
 
 ## Links
 
-- [Documentation](https://clashofclans.js.org/docs/)
+- [Documentation](https://github.com/Knightplayzz/clash-of-clans)
 - [Clash of Clans Developer Website](https://developer.clashofclans.com/)
 - [Clash of Clans API Community Discord](https://discord.gg/Eaja7gJ)
 
 ## Example
 
 ```javascript
-const client = require('clash-of-clans');
+const client = require('clash-of-clans-node');
 async function myFunction() {
     await client.login(auth);
     const clan = await client.getClan('#2GLVC9GYV');
