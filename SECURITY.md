@@ -23,6 +23,9 @@ If there is a report about a potiential safety issue, we will immediately evalua
 If there is an safety issue it will be our priority to resolve that issue.
 
 ## For more information please contact us
-Mail: Philippesmeets@icloud.com
-Github: Knightplayzz
-Discord: philippesmeets (philippe#0354)
+
+| Type | Information |
+|------|-------------|
+| Mail |<Philippesmeets@icloud.com> |
+| Github | Knightplayzz | 
+| Discord | philippesmeets (philippe#0354) | 
