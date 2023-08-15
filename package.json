@@ -1,6 +1,6 @@
 {
   "name": "clash-of-clans-node",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "commonjs",
   "description": "npm package that connects to the clash of clans api to get information. Clans, player data ect.",
   "main": "index.js",
