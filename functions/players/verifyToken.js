@@ -14,19 +14,19 @@ async function verifyPlayer(playerTag, token) {
 
 
     if (typeof playerTag !== 'string') {
-        return { "error": "404", "reason": "PlayerTag must be a string", "message": "notFound" }
+        return { 'error': '404', 'reason': 'PlayerTag must be a string', 'message': 'notFound' };
     }
     if (typeof token !== 'string') {
-        return { "error": "404", "reason": "Token must be a string", "message": "internal error" }
+        return { 'error': '404', 'reason': 'Token must be a string', 'message': 'internal error' };
     }
-    if (playerTag.startsWith("#")) {
+    if (playerTag.startsWith('#')) {
         const headers = { 'Authorization': `Bearer ${authToken}` };
         let personIdConvertString = encodeURIComponent(playerTag);
 
         let fetchUrl = `https://api.clashofclans.com/v1/players/${personIdConvertString}/verifytoken`;
         const requestData = {
-            "token": token
-        }
+            'token': token
+        };
         const requestOptions = {
             method: 'POST',
             headers: headers,
@@ -36,7 +36,7 @@ async function verifyPlayer(playerTag, token) {
         const data = await response.json();
         return data;
 
-    } else return { "error": "404", "reason": 'PlayerTag must start with "#"', "message": "notFound" }
+    } else return { 'error': '404', 'reason': 'PlayerTag must start with "#"', 'message': 'notFound' };
 }
 
-module.exports = { verifyPlayer } 
+module.exports = { verifyPlayer }; 

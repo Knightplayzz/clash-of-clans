@@ -8,10 +8,10 @@ async function getClanCurrentWar(clanTag) {
     const context = require('../auth/context');
     const authToken = context.getAuthToken();
     if (typeof clanTag !== 'string') {
-        return { "error": "404", "reason": "ClanTag must be a string", "message": "notFound" }
+        return { 'error': '404', 'reason': 'ClanTag must be a string', 'message': 'notFound' };
     }
 
-    if (clanTag.startsWith("#")) {
+    if (clanTag.startsWith('#')) {
 
         const headers = { 'Authorization': `Bearer ${authToken}` };
         let clanTagConverString = encodeURIComponent(clanTag);
@@ -21,7 +21,7 @@ async function getClanCurrentWar(clanTag) {
         const data = await response.json();
         return data;
 
-    } else return { "error": "404", "reason": `clanTag must start with "#"`, "message": `notFound` }
+    } else return { 'error': '404', 'reason': 'clanTag must start with "#"', 'message': 'notFound' };
 }
 
-module.exports = { getClanCurrentWar }  
+module.exports = { getClanCurrentWar };  

@@ -5,11 +5,11 @@ async function getGoldpass() {
     const authToken = context.getAuthToken();
 
     const headers = { 'Authorization': `Bearer ${authToken}` };
-    var fetchUrl = `https://api.clashofclans.com/v1/goldpass/seasons/current`;
+    var fetchUrl = 'https://api.clashofclans.com/v1/goldpass/seasons/current';
 
     const response = await fetch(fetchUrl, { headers });
     const data = await response.json();
     return data;
 }
 
-module.exports = { getGoldpass }  
+module.exports = { getGoldpass };  

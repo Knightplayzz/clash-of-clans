@@ -11,13 +11,14 @@ async function getSeasonId(limit) {
     const authToken = context.getAuthToken();
 
     if (typeof limit !== 'number' && limit !== undefined) {
-        return { "error": "404", "reason": "Limit must be a number", "message": "notFound" }
+        return { 'error': '404', 'reason': 'Limit must be a number', 'message': 'notFound' };
     }
+    var fetchUrl = '';
     if (!limit) {
-        var fetchUrl = `https://api.clashofclans.com/v1/leagues/29000022/seasons`;
+        fetchUrl = 'https://api.clashofclans.com/v1/leagues/29000022/seasons';
     } else {
         let limitConvertString = limit.toString();
-        var fetchUrl = `https://api.clashofclans.com/v1/leagues/29000022/seasons?limit=${limitConvertString}`;
+        fetchUrl = `https://api.clashofclans.com/v1/leagues/29000022/seasons?limit=${limitConvertString}`;
     }
 
     const headers = { 'Authorization': `Bearer ${authToken}` };
@@ -26,4 +27,4 @@ async function getSeasonId(limit) {
     return data;
 }
 
-module.exports = { getSeasonId }  
+module.exports = { getSeasonId };  

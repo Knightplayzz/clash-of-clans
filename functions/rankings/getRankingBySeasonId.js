@@ -12,13 +12,13 @@ async function getRankingBySeasonId(seasonId, limit) {
     const authToken = context.getAuthToken();
 
     if (typeof seasonId !== 'string') {
-        return { "error": "404", "reason": "SeasonId must be a string", "message": "notFound" }
+        return { 'error': '404', 'reason': 'SeasonId must be a string', 'message': 'notFound' };
     }
     if (typeof limit !== 'number' && limit !== undefined) {
-        return { "error": "404", "reason": "Limit must be a number", "message": "notFound" }
+        return { 'error': '404', 'reason': 'Limit must be a number', 'message': 'notFound' };
     }
     if (!limit) {
-        return { "error": "404", "reason": "must set a limit", "message": "notFound" }
+        return { 'error': '404', 'reason': 'must set a limit', 'message': 'notFound' };
     } else {
         let limitConvertString = limit.toString();
         var fetchUrl = `https://api.clashofclans.com/v1/leagues/29000022/seasons/${seasonId}?limit=${limitConvertString}`;
@@ -30,4 +30,4 @@ async function getRankingBySeasonId(seasonId, limit) {
     return data;
 }
 
-module.exports = { getRankingBySeasonId }  
+module.exports = { getRankingBySeasonId };  

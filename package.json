@@ -26,5 +26,8 @@
   "homepage": "https://github.com/Knightplayzz/clash-of-clans#readme",
   "dependencies": {
     "node-fetch": "^2.6.12"
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0"
   }
 }

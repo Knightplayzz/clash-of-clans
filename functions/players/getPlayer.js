@@ -6,11 +6,11 @@ const fetch = require('node-fetch');
 
 async function getPlayer(playerTag) {
     const context = require('../auth/context');
-    const authToken = context.getAuthToken(); 
+    const authToken = context.getAuthToken();
     if (typeof playerTag !== 'string') {
-        return { "error": "404", "reason": "PlayerTag must be a string", "message": "notFound" }
-    } 
-    if (playerTag.startsWith("#")) {
+        return { 'error': '404', 'reason': 'PlayerTag must be a string', 'message': 'notFound' };
+    }
+    if (playerTag.startsWith('#')) {
 
         const headers = { 'Authorization': `Bearer ${authToken}` };
         let personIdConvertString = encodeURIComponent(playerTag);
@@ -20,7 +20,7 @@ async function getPlayer(playerTag) {
         const response = await fetch(fetchUrl, { headers });
         const data = await response.json();
         return data;
-    } else return { "error": "404", "reason": `playerTag must start with "#"`, "message": `notFound` }
+    } else return { 'error': '404', 'reason': 'playerTag must start with "#"', 'message': 'notFound' };
 
 }
-module.exports = { getPlayer }
+module.exports = { getPlayer };

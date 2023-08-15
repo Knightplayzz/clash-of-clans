@@ -10,13 +10,14 @@ async function getWarLeagues(limit) {
     const authToken = context.getAuthToken();
 
     if (typeof limit !== 'number' && limit !== undefined) {
-        return { "error": "404", "reason": "Limit must be a number", "message": "notFound" }
+        return { 'error': '404', 'reason': 'Limit must be a number', 'message': 'notFound' };
     }
+    var fetchUrl = '';
     if (!limit) {
-        var fetchUrl = `https://api.clashofclans.com/v1/warleagues`;
+        fetchUrl = 'https://api.clashofclans.com/v1/warleagues';
     } else {
         let limitConvertString = limit.toString();
-        var fetchUrl = `https://api.clashofclans.com/v1/warleagues?limit=${limitConvertString}`;
+        fetchUrl = `https://api.clashofclans.com/v1/warleagues?limit=${limitConvertString}`;
     }
 
     const headers = { 'Authorization': `Bearer ${authToken}` };
@@ -29,4 +30,4 @@ async function getWarLeagues(limit) {
 
 }
 
-module.exports = { getWarLeagues }  
+module.exports = { getWarLeagues };  

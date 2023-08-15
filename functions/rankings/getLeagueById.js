@@ -10,7 +10,7 @@ async function getLeagueById(leagueId) {
     const authToken = context.getAuthToken();
 
     if (typeof leagueId !== 'string') {
-        return { "error": "404", "reason": "LeagueId must be a string", "message": "notFound" }
+        return { 'error': '404', 'reason': 'LeagueId must be a string', 'message': 'notFound' };
     }
 
     var fetchUrl = `https://api.clashofclans.com/v1/leagues/${leagueId}`;
@@ -21,4 +21,4 @@ async function getLeagueById(leagueId) {
     return data;
 }
 
-module.exports = { getLeagueById }  
+module.exports = { getLeagueById };  

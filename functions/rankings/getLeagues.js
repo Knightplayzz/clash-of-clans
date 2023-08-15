@@ -11,13 +11,14 @@ async function getLeagues(limit) {
     const authToken = context.getAuthToken();
 
     if (typeof limit !== 'number' && limit !== undefined) {
-        return { "error": "404", "reason": "Limit must be a number", "message": "notFound" }
+        return { 'error': '404', 'reason': 'Limit must be a number', 'message': 'notFound' };
     }
+    var fetchUrl = '';
     if (!limit) {
-        var fetchUrl = `https://api.clashofclans.com/v1/leagues`;
+        fetchUrl = 'https://api.clashofclans.com/v1/leagues';
     } else {
         let limitConvertString = limit.toString();
-        var fetchUrl = `https://api.clashofclans.com/v1/leagues?limit=${limitConvertString}`;
+        fetchUrl = `https://api.clashofclans.com/v1/leagues?limit=${limitConvertString}`;
     }
 
     const headers = { 'Authorization': `Bearer ${authToken}` };
@@ -30,4 +31,4 @@ async function getLeagues(limit) {
 
 }
 
-module.exports = { getLeagues }  
+module.exports = { getLeagues };  
