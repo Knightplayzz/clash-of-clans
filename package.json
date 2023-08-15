@@ -1,6 +1,6 @@
 {
   "name": "clash-of-clans-node",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "commonjs",
   "description": "npm package that connects to the clash of clans api to get information. Clans, player data ect.",
   "main": "index.js",
@@ -19,7 +19,7 @@
     "Supercell"
   ],
   "author": "Philippe Smeets",
-  "license": "",
+  "license": "CC BY-NC",
   "bugs": {
     "url": "https://github.com/Knightplayzz/clash-of-clans/issues"
   },
