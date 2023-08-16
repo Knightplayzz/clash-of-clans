@@ -33,8 +33,8 @@ async function verifyPlayer(playerTag, token) {
             body: JSON.stringify(requestData) // Convert data to JSON string
         };
         const response = await fetch(fetchUrl, requestOptions);
-        const data = await response.json();
-        return data;
+        const data = await response;
+        return data.json();
 
     } else return { 'error': '404', 'reason': 'PlayerTag must start with "#"', 'message': 'notFound' };
 }

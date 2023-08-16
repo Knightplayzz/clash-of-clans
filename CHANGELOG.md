@@ -6,6 +6,10 @@
 
 Added changelog.
 
+### Change README.md and documentation.md
+
+Added 4 badge. Coverage Badge.
+
 ## V1.0.6
 
 ### Linter
