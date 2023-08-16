@@ -1,5 +1,10 @@
 const fetch = require('node-fetch');
 
+/**
+ * Retrieves goldpass information.
+ * @returns {Promise<JSON>} JSON
+ */
+
 async function getGoldpass() {
     const context = require('../auth/context');
     const authToken = context.getAuthToken();

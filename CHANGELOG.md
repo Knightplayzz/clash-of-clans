@@ -2,6 +2,10 @@
 
 ## V1.0.7
 
+### Added new functions
+
+Added new locations functions.
+
 ### New Changelog
 
 Added changelog.
@@ -9,6 +13,15 @@ Added changelog.
 ### Change README.md and documentation.md
 
 Added 4 badge. Coverage Badge.
+Changed documation.
+
+### Added JEST
+
+Added jest to test the package.
+
+### Chaged all functions
+
+Cleaned up code. Fixed Bugs.
 
 ## V1.0.6
 

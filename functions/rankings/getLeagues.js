@@ -1,9 +1,9 @@
 const fetch = require('node-fetch');
 
 /**
- * Retrieves all leagues.
- * 
- *  @param {number} limit - Limits the amount of ranking locations. (NOT REQUIRED)
+ *  Retrieves all leagues.
+ *  @param {number} limit - Limit the number of items returned in the response.
+ *  @returns {Promise<JSON>} JSON
  */
 
 async function getLeagues(limit) {
@@ -17,18 +17,12 @@ async function getLeagues(limit) {
     if (!limit) {
         fetchUrl = 'https://api.clashofclans.com/v1/leagues';
     } else {
-        let limitConvertString = limit.toString();
-        fetchUrl = `https://api.clashofclans.com/v1/leagues?limit=${limitConvertString}`;
+        fetchUrl = `https://api.clashofclans.com/v1/leagues?limit=${limit}`;
     }
-
     const headers = { 'Authorization': `Bearer ${authToken}` };
-
-
     const response = await fetch(fetchUrl, { headers });
     const data = await response.json();
     return data;
-
-
 }
 
 module.exports = { getLeagues };  

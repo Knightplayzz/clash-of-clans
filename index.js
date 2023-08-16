@@ -6,12 +6,12 @@ const { getPlayer } = require('./functions/players/getPlayer');
 const { verifyPlayer } = require('./functions/players/verifyToken');
 
 //clan
-const { getClan } = require('./functions/clan/getClan');
-const { getClanMembers } = require('./functions/clan/getClanMembers');
-const { getClanCurrentWarLeagueGroup } = require('./functions/clan/getClanCurrentWarLeagueGroup');
-const { getClanWarLog } = require('./functions/clan/getClanWarLog');
-const { getClanCapitalRaidSeason } = require('./functions/clan/getClanCapitalRaidSeason');
-const { getClanCurrentWar } = require('./functions/clan/getClanCurrentWar');
+const { getClan } = require('./functions/clans/getClan');
+const { getClanMembers } = require('./functions/clans/getClanMembers');
+const { getClanCurrentWarLeagueGroup } = require('./functions/clans/getClanCurrentWarLeagueGroup');
+const { getClanWarLog } = require('./functions/clans/getClanWarLog');
+const { getClanCapitalRaidSeason } = require('./functions/clans/getClanCapitalRaidSeason');
+const { getClanCurrentWar } = require('./functions/clans/getClanCurrentWar');
 //search clan
 //clanwarTag
 
@@ -34,7 +34,12 @@ const { getRankingBySeasonId } = require('./functions/rankings/getRankingBySeaso
 
 //locations
 const { getLocations } = require('./functions/locations/getLocations');
+const { getLocationById } = require('./functions/locations/getLocationById');
+const { getClansRankingsByLocationId } = require('./functions/locations/getClansRankingsByLocationId');
+const { getClansBuilderBaseRankingsByLocationId } = require('./functions/locations/getClansBuilderBaseRankingsByLocationId');
+const { getPlayersRankingsByLocationId } = require('./functions/locations/getPlayersRankingsByLocationId');
+const { getPlayersBuilderBaseRankingsByLocationId } = require('./functions/locations/getPlayersBuilderBaseByLocationId');
 
 
 //players
-module.exports = { login, getClan, getClanMembers, getClanCurrentWarLeagueGroup, getClanWarLog, getClanCapitalRaidSeason, getClanCurrentWar, getGoldpass, getLocations, getLeagues, getCapitalLeagues, getWarLeagues, getBuilderBaseLeagues, getLeagueById, getWarLeagueById, getBuilderBaseLeagueById, getCapitalLeagueById, getSeasonId, getRankingBySeasonId, getPlayer, verifyPlayer };  
+module.exports = { login, getClan, getClanMembers, getClanCurrentWarLeagueGroup, getClanWarLog, getClanCapitalRaidSeason, getClanCurrentWar, getGoldpass, getLocations, getLeagues, getCapitalLeagues, getWarLeagues, getBuilderBaseLeagues, getLeagueById, getWarLeagueById, getBuilderBaseLeagueById, getCapitalLeagueById, getSeasonId, getRankingBySeasonId, getPlayer, verifyPlayer, getLocationById, getClansRankingsByLocationId, getPlayersRankingsByLocationId, getClansBuilderBaseRankingsByLocationId, getPlayersBuilderBaseRankingsByLocationId };  
