@@ -12,15 +12,12 @@ async function getClanCurrentWar(clanTag) {
         return { 'error': '404', 'reason': 'ClanTag must be a string', 'message': 'notFound' };
     }
     if (clanTag.startsWith('#')) {
-
         const headers = { 'Authorization': `Bearer ${authToken}` };
         let clanTagConverString = encodeURIComponent(clanTag);
         var fetchUrl = `https://api.clashofclans.com/v1/clans/${clanTagConverString}/currentwar`;
-
         const response = await fetch(fetchUrl, { headers });
         const data = await response.json();
         return data;
-
     } else return { 'error': '404', 'reason': 'clanTag must start with "#"', 'message': 'notFound' };
 }
 

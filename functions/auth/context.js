@@ -1,4 +1,4 @@
-let authToken = '';
+let authToken;
 
 function setAuthToken(auth) {
     authToken = auth;
@@ -6,6 +6,5 @@ function setAuthToken(auth) {
 function getAuthToken() {
     return authToken;
 }
-
 
 module.exports = { setAuthToken, getAuthToken };

@@ -16,7 +16,7 @@ async function getCapitalLeagues(limit) {
     if (!limit) {
         fetchUrl = 'https://api.clashofclans.com/v1/capitalleagues';
     } else {
-        fetchUrl = `https://api.clashofclans.com/v1/capitalleagues?limit=${String}`;
+        fetchUrl = `https://api.clashofclans.com/v1/capitalleagues?limit=${limit}`;
     }
     const headers = { 'Authorization': `Bearer ${authToken}` };
     const response = await fetch(fetchUrl, { headers });

@@ -1,0 +1,27 @@
+name: Upload Coverage to Coveralls
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  coveralls:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Upload coverage to Coveralls
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        run: npm run test -- --coverage && cat ./coverage/lcov.info | coveralls

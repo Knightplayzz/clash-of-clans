@@ -8,9 +8,10 @@ const fetch = require('node-fetch');
  *  @returns {Promise<JSON>} JSON
  */
 async function getClansRankingsByLocationId(locationId, limit) {
+    console.log('START');
     const context = require('../auth/context');
     const authToken = context.getAuthToken();
-    if (typeof clanTag !== 'string') {
+    if (typeof locationId !== 'string') {
         return { 'error': '404', 'reason': 'LocationId must be a string', 'message': 'notFound' };
     }
     if (typeof limit !== 'number' && limit !== undefined) {
