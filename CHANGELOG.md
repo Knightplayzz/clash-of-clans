@@ -2,6 +2,16 @@
 
 ## V1.0.7
 
+### ADDED test files
+
+Create test files for every line of code and upload the code coverage to coverall.io
+
+### BUG FIX
+
+Some new command of V1.0.7 didn't work. Now they do.
+
+## V1.0.7
+
 ### Added new functions
 
 Added new locations functions.
