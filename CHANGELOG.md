@@ -1,5 +1,11 @@
 # Changelog
 
+## V1.1.0
+
+### EDIT Search Clan test
+
+Coverage 100%. Also there was a glitch that npm did not update the package and it should do it now.
+
 ## V1.0.9
 
 ### Added Search Clan command
