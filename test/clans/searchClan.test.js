@@ -11,16 +11,25 @@ describe('searchClan function', () => {
         context.getAuthToken.mockClear(); // Mock the getAuthToken function
     });
 
-    it('should search clans with valid parameters', async () => {
+    it('should construct the fetch URL correctly with all parameters', async () => {
         context.getAuthToken.mockReturnValue('dummyAuthToken');
 
         fetch.mockResolvedValue({
             json: jest.fn().mockResolvedValue({ clans: ['Clan1', 'Clan2'] }),
         });
 
-        const result = await searchClan('ClanName', 'ALWAYS', 123, 10, 50, 1000, 5, 20);
+        await searchClan(
+            'ClanName',
+            'ALWAYS',
+            123,
+            10,
+            50,
+            1000,
+            5,
+            20
+        );
 
-        expect(fetch).toHaveBeenCalledWith(
+        const expectedUrl =
             'https://api.clashofclans.com/v1/clans?' +
             'name=ClanName&' +
             'warFrequency=ALWAYS&' +
@@ -29,19 +38,63 @@ describe('searchClan function', () => {
             'maxMembers=50&' +
             'minClanPoints=1000&' +
             'minClanLevel=5&' +
-            'limit=20',
-            {
-                headers: { Authorization: 'Bearer dummyAuthToken' },
-            }
-        );
+            'limit=20';
 
-        expect(result).toEqual({ clans: ['Clan1', 'Clan2'] });
+        expect(fetch).toHaveBeenCalledWith(expectedUrl, {
+            headers: { Authorization: 'Bearer dummyAuthToken' },
+        });
     });
 
-    // Write additional test cases to cover other scenarios, including invalid input parameters.
-    // ...
+    it('should construct the fetch URL correctly with minimal parameters', async () => {
+        context.getAuthToken.mockReturnValue('dummyAuthToken');
 
-    // Example test cases for invalid input parameters
+        fetch.mockResolvedValue({
+            json: jest.fn().mockResolvedValue({ clans: ['Clan1', 'Clan2'] }),
+        });
+
+        await searchClan('ClanName', 'ALWAYS');
+
+        const expectedUrl =
+            'https://api.clashofclans.com/v1/clans?' +
+            'name=ClanName&' +
+            'warFrequency=ALWAYS';
+
+        expect(fetch).toHaveBeenCalledWith(expectedUrl, {
+            headers: { Authorization: 'Bearer dummyAuthToken' },
+        });
+    });
+
+    it('should construct the fetch URL with only name and warFrequency', async () => {
+        context.getAuthToken.mockReturnValue('dummyAuthToken');
+
+        fetch.mockResolvedValue({
+            json: jest.fn().mockResolvedValue({ clans: ['Clan1', 'Clan2'] }),
+        });
+
+        await searchClan('ClanName', 'ALWAYS', undefined, undefined, undefined, undefined, undefined, undefined);
+
+        const expectedUrl =
+            'https://api.clashofclans.com/v1/clans?' +
+            'name=ClanName&' +
+            'warFrequency=ALWAYS';
+
+        expect(fetch).toHaveBeenCalledWith(expectedUrl, {
+            headers: { Authorization: 'Bearer dummyAuthToken' },
+        });
+    });
+
+    it('should handle errors when fetching clans', async () => {
+        context.getAuthToken.mockReturnValue('dummyAuthToken');
+
+        fetch.mockRejectedValue(new Error('Fetch error'));
+
+        try {
+            await searchClan('ClanName', 'ALWAYS', 123, 10, 50, 1000, 5, 20);
+        } catch (error) {
+            expect(error.message).toBe('Fetch error');
+        }
+    });
+
     it('should return an error when name is not a string', async () => {
         const result = await searchClan(123, 'ALWAYS', 123, 10, 50, 1000, 5, 20);
         expect(result).toEqual({
@@ -60,18 +113,98 @@ describe('searchClan function', () => {
         });
     });
 
-    // Add more test cases for other parameter validations.
-    // ...
+    it('should return an error when locationId is not a number', async () => {
+        const result = await searchClan('ClanName', 'ALWAYS', 'NotANumber', 10, 50, 1000, 5, 20);
+        expect(result).toEqual({
+            error: '404',
+            reason: 'LocationId must be a number',
+            message: 'notFound',
+        });
+    });
 
-    it('should handle errors when searching clans', async () => {
+    it('should return an error when minMembers is not a number', async () => {
+        const result = await searchClan('ClanName', 'ALWAYS', 123, 'NotANumber', 50, 1000, 5, 20);
+        expect(result).toEqual({
+            error: '404',
+            reason: 'MinMembers must be a number',
+            message: 'notFound',
+        });
+    });
+
+    it('should return an error when maxMembers is not a number', async () => {
+        const result = await searchClan('ClanName', 'ALWAYS', 123, 10, 'NotANumber', 1000, 5, 20);
+        expect(result).toEqual({
+            error: '404',
+            reason: 'MaxMembers must be a number',
+            message: 'notFound',
+        });
+    });
+
+    it('should return an error when minClanPoints is not a number', async () => {
+        const result = await searchClan('ClanName', 'ALWAYS', 123, 10, 50, 'NotANumber', 5, 20);
+        expect(result).toEqual({
+            error: '404',
+            reason: 'MinClanPoints must be a number',
+            message: 'notFound',
+        });
+    });
+
+    it('should return an error when minClanLevel is not a number', async () => {
+        const result = await searchClan('ClanName', 'ALWAYS', 123, 10, 50, 1000, 'NotANumber', 20);
+        expect(result).toEqual({
+            error: '404',
+            reason: 'minClanLevel must be a number',
+            message: 'notFound',
+        });
+    });
+
+    it('should return an error when limit is not a number', async () => {
+        const result = await searchClan('ClanName', 'ALWAYS', 123, 10, 50, 1000, 5, 'NotANumber');
+        expect(result).toEqual({
+            error: '404',
+            reason: 'Limit must be a number',
+            message: 'notFound',
+        });
+    });
+
+    // Add more test cases to cover other scenarios.
+    it('should construct the fetch URL correctly with parameter clanName', async () => {
         context.getAuthToken.mockReturnValue('dummyAuthToken');
 
-        fetch.mockRejectedValue(new Error('Fetch error'));
+        fetch.mockResolvedValue({
+            json: jest.fn().mockResolvedValue({ clans: ['Clan1', 'Clan2'] }),
+        });
 
-        try {
-            await searchClan('ClanName', 'ALWAYS', 123, 10, 50, 1000, 5, 20);
-        } catch (error) {
-            expect(error.message).toBe('Fetch error');
-        }
+        await searchClan(
+            'ClanName'
+        );
+
+        const expectedUrl =
+            'https://api.clashofclans.com/v1/clans?' +
+            'name=ClanName';
+
+        expect(fetch).toHaveBeenCalledWith(expectedUrl, {
+            headers: { Authorization: 'Bearer dummyAuthToken' },
+        });
+    });
+    it('should construct the fetch URL correctly with parameter warFrequency', async () => {
+        context.getAuthToken.mockReturnValue('dummyAuthToken');
+
+        fetch.mockResolvedValue({
+            json: jest.fn().mockResolvedValue({ clans: ['Clan1', 'Clan2'] }),
+        });
+
+        await searchClan(
+            undefined,
+            'NEVER'
+        );
+
+        const expectedUrl =
+            'https://api.clashofclans.com/v1/clans?' +
+            'warFrequency=NEVER';
+
+        expect(fetch).toHaveBeenCalledWith(expectedUrl, {
+            headers: { Authorization: 'Bearer dummyAuthToken' },
+        });
     });
 });
