@@ -12,7 +12,7 @@ const { getClanCurrentWarLeagueGroup } = require('./functions/clans/getClanCurre
 const { getClanWarLog } = require('./functions/clans/getClanWarLog');
 const { getClanCapitalRaidSeason } = require('./functions/clans/getClanCapitalRaidSeason');
 const { getClanCurrentWar } = require('./functions/clans/getClanCurrentWar');
-//search clan
+const { searchClan } = require('./functions/clans/searchClan');
 //clanwarTag
 
 //goldpass
@@ -38,8 +38,8 @@ const { getLocationById } = require('./functions/locations/getLocationById');
 const { getClansRankingsByLocationId } = require('./functions/locations/getClansRankingsByLocationId');
 const { getClansBuilderBaseRankingsByLocationId } = require('./functions/locations/getClansBuilderBaseRankingsByLocationId');
 const { getPlayersRankingsByLocationId } = require('./functions/locations/getPlayersRankingsByLocationId');
-const { getPlayersBuilderBaseRankingsByLocationId } = require('./functions/locations/getPlayersBuilderBaseByLocationId');
+const { getPlayersBuilderBaseRankingsByLocationId } = require('./functions/locations/getPlayersBuilderBaseRankingsByLocationId');
 
 
 //players
-module.exports = { login, getClan, getClanMembers, getClanCurrentWarLeagueGroup, getClanWarLog, getClanCapitalRaidSeason, getClanCurrentWar, getGoldpass, getLocations, getLeagues, getCapitalLeagues, getWarLeagues, getBuilderBaseLeagues, getLeagueById, getWarLeagueById, getBuilderBaseLeagueById, getCapitalLeagueById, getSeasonId, getRankingBySeasonId, getPlayer, verifyPlayer, getLocationById, getClansRankingsByLocationId, getPlayersRankingsByLocationId, getClansBuilderBaseRankingsByLocationId, getPlayersBuilderBaseRankingsByLocationId };  
+module.exports = { login, getClan, searchClan, getClanMembers, getClanCurrentWarLeagueGroup, getClanWarLog, getClanCapitalRaidSeason, getClanCurrentWar, getGoldpass, getLocations, getLeagues, getCapitalLeagues, getWarLeagues, getBuilderBaseLeagues, getLeagueById, getWarLeagueById, getBuilderBaseLeagueById, getCapitalLeagueById, getSeasonId, getRankingBySeasonId, getPlayer, verifyPlayer, getLocationById, getClansRankingsByLocationId, getPlayersRankingsByLocationId, getClansBuilderBaseRankingsByLocationId, getPlayersBuilderBaseRankingsByLocationId };  

@@ -1,6 +1,6 @@
 {
   "name": "clash-of-clans-node",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "engines": {
     "node": "16.18.0"
   },
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/Knightplayzz/clash-of-clans#readme",
   "dependencies": {
-    "node-fetch": "^2.6.12"
+    "node-fetch": "^2.6.13"
   },
   "devDependencies": {
     "coveralls": "^3.1.1",

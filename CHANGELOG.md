@@ -1,6 +1,20 @@
 # Changelog
 
-## V1.0.7
+## V1.0.9
+
+### Added Search Clan command
+
+Added the new command. Edited the documentation and the new inputs. Added testfile for the command. Edited index.
+
+### Fix Changelog
+
+It said V1.0.7 twice. Now updated to V1.0.8.
+
+### Fix index
+
+Command wrong directory. Changed it to the right one.
+
+## V1.0.8
 
 ### ADDED test files
 
