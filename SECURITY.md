@@ -3,16 +3,11 @@
 ## Supported Versions
 
 All versions are suppored. But we highly recommend useing the latest version.
-Old versions still work but don't have new functinalities.
+Old versions still work but don't have new functinalities and safety updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.5   | :white_check_mark: |
-| 1.0.4   | :white_check_mark: |
-| 1.0.3   | :white_check_mark: |
-| 1.0.2   | :white_check_mark: |
-| 1.0.1   | :white_check_mark: |
-| 1.0.0   | :white_check_mark: |
+| 1.0.0 - 1.1.1   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
@@ -27,5 +22,5 @@ If there is an safety issue it will be our priority to resolve that issue.
 | Type | Information |
 |------|-------------|
 | Mail |<Philippesmeets@icloud.com> |
-| Github | Knightplayzz | 
-| Discord | philippesmeets (philippe#0354) | 
+| Github | Knightplayzz |
+| Discord | philippesmeets (philippe#0354) |
