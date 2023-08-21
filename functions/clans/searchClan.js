@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 /**
- * Retrieves information about individual clan war league war
+ * Retrieves clans based on search results.
  * @param {string} name - The tag of the clan.
  * 
  * @param {string} warFrequency - The frequency of the war.

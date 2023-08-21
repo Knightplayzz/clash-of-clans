@@ -1,5 +1,23 @@
 # Changelog
 
+## V1.1.1
+
+From now on only bug fixes or other issue releated updates. All commands are added. Unless supersell released new stuff this will be it.
+
+### Added Get Clan War League By War Tag
+
+Added new command. Now all commands are added. Added new files (function and test), edit the index.js and edit the documentation.
+
+### BUG FIX
+
+Small bug in ``#searchClan``. There was a wrong description, the command was working.
+Also updated the documentation to change the description of the command.
+
+### NPM glitch
+
+There is still a glitch in npm that my search results will not update.
+Hopefully is will now be fixed.
+
 ## V1.1.0
 
 ### EDIT Search Clan test
@@ -7,6 +25,10 @@
 Coverage 100%. Also there was a glitch that npm did not update the package and it should do it now.
 
 ## V1.0.9
+
+### Node-Fetch UPDATE
+
+Updated to node-fetch@2.6.13 from node-fetch@2.6.12
 
 ### Added Search Clan command
 
