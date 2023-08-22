@@ -1,0 +1,10 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - 16.18.0
+
+before_install:
+  - npm i -g npm@9.8.1
+

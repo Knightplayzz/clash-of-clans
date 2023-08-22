@@ -1,5 +1,11 @@
 # Changelog
 
+## V1.1.2
+
+### Update package
+
+Package will remain the same. A dev package has been updated to the newest version. Jest@29.6.2 -> Jest@29.6.3.
+
 ## V1.1.1
 
 From now on only bug fixes or other issue releated updates. All commands are added. Unless supersell released new stuff this will be it.
