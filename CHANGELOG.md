@@ -2,6 +2,14 @@
 
 ## V1.1.2
 
+### Update README.md and DOCUMENTATION.md
+
+Added new badge.
+
+### Travis
+
+Connect to travis. Functionality remains the same. These things are only for devs.
+
 ### Update package
 
 Package will remain the same. A dev package has been updated to the newest version. Jest@29.6.2 -> Jest@29.6.3.
