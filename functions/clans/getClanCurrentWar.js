@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 /**
- * Retrieves clans current war by clanTag.
+ * Retrieves clan current war by clanTag.
  * @param {string} clanTag - The tag of the clan.
  * @returns {Promise<JSON>} JSON
  */

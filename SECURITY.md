@@ -7,7 +7,7 @@ Old versions still work but don't have new functinalities and safety updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.0 - 1.1.1   | :white_check_mark: |
+| 1.0.0 - 1.1.3   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 

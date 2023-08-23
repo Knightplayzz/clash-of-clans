@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 /**
- * Retrieves clans members by clanTag.
+ * Retrieves clan members by clanTag.
  * @param {string} clanTag - The tag of the clan.
  * 
  *  @param {number} limit - Limit the number of items returned in the response.

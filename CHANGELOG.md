@@ -1,5 +1,15 @@
 # Changelog
 
+## V1.1.3
+
+### Added labels and getClansCapitalRankingsByLocationId
+
+Added new folder and files. Edit index and documentation.
+
+### Fix in documentation
+
+There was a issue in the documentation.
+
 ## V1.1.2
 
 ### Update README.md and DOCUMENTATION.md
