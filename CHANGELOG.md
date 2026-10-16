@@ -34,7 +34,7 @@ Added new command. Now all commands are added. Added new files (function and tes
 
 ### BUG FIX
 
-Small bug in ``#searchClan``. There was a wrong description, the command was working.
+Small bug in `#searchClan`. There was a wrong description, the command was working.
 Also updated the documentation to change the description of the command.
 
 ### NPM glitch

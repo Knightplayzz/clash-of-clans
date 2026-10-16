@@ -5,9 +5,10 @@
 All versions are suppored. But we highly recommend useing the latest version.
 Old versions still work but don't have new functinalities and safety updates.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.0.0 - 1.1.3   | :white_check_mark: |
+| Version | Supported              |
+| ------- | ---------------------- |
+| 2.0.0   | :white_check_mark:     |
+| 1.x.x   | ❌ No longer supported |
 
 ## Reporting a Vulnerability
 
@@ -19,8 +20,8 @@ If there is an safety issue it will be our priority to resolve that issue.
 
 ## For more information please contact us
 
-| Type | Information |
-|------|-------------|
-| Mail |<Philippesmeets@icloud.com> |
-| Github | Knightplayzz |
+| Type    | Information                    |
+| ------- | ------------------------------ |
+| Mail    | <Philippesmeets@icloud.com>    |
+| Github  | Knightplayzz                   |
 | Discord | philippesmeets (philippe#0354) |

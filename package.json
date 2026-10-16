@@ -1,38 +1,72 @@
 {
   "name": "clash-of-clans-node",
-  "version": "1.1.4",
+  "version": "2.0.0",
   "engines": {
-    "node": "16.18.0"
+    "node": ">=22.0.0"
   },
-  "type": "commonjs",
-  "description": "Npm package that connects to the clash of clans api to get information. Clans, player data ect.",
-  "main": "index.js",
+  "type": "module",
+  "description": "A Node.js package for retrieving clan, player, league, location, label, and Gold Pass data from the official Clash of Clans API.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "test": "jest --coverage"
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "test:coverage": "npm run test",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "lint": "eslint .",
+    "build": "tsc -p tsconfig.json",
+    "check": "npm run format:check && npm run lint && npm run test && npm run build",
+    "prepublishOnly": "npm run check",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Knightplayzz/clash-of-clans.git"
+    "url": "https://github.com/Knightplayzz/clash-of-clans.git"
   },
-  "keywords": [
-    "COC",
-    "clash-of-clans",
-    "clash-api",
-    "API",
-    "Supercell"
-  ],
-  "author": "Philippe Smeets",
-  "license": "CC BY-NC",
+  "homepage": "https://github.com/Knightplayzz/clash-of-clans#readme",
   "bugs": {
     "url": "https://github.com/Knightplayzz/clash-of-clans/issues"
   },
-  "homepage": "https://github.com/Knightplayzz/clash-of-clans#readme",
-  "dependencies": {
-    "node-fetch": "^2.6.13"
+  "keywords": [
+    "clashofclans",
+    "clash of clans",
+    "clash-of-clans",
+    "clashofclans-api",
+    "supercell",
+    "supercell-api",
+    "api-wrapper",
+    "clash-of-clans-api"
+  ],
+  "author": "Philippe Smeets",
+  "license": "CC BY-NC",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
-    "coveralls": "^3.1.1",
-    "eslint": "^8.47.0",
-    "jest": "^29.6.3"
+    "@eslint/js": "^10.0.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.6.5",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-promise": "^7.3.0",
+    "jest": "^30.5.2",
+    "prettier": "^3.9.10",
+    "typescript": "^7.0.2"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "unrs-resolver@1.12.2": true
   }
 }
