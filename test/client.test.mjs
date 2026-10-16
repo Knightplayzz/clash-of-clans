@@ -71,7 +71,9 @@ test("requests all required endpoints and supports cache controls", async () => 
   client.invalidateCache();
   assert.ok(fetchMock.mock.calls.length > callsAfterResources);
   assert.equal(fetchMock.mock.calls[0][1].headers.Authorization, "Bearer token");
-  assert.equal(fetchMock.mock.calls[10][1].method, "POST");
+  const verifyTokenCall = fetchMock.mock.calls.find(([url]) => url.endsWith("/players/%23P2/verifytoken"));
+  assert.ok(verifyTokenCall);
+  assert.equal(verifyTokenCall[1].method, "POST");
 });
 
 test("maps authentication, rate-limit, server, malformed, and network failures", async () => {
