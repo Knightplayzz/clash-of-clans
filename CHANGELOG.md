@@ -1,5 +1,32 @@
 # Changelog
 
+## What's Changed in 2.0.0
+
+Version 2.0.0 is a major update to **clash-of-clans-node**, introducing a redesigned client, broader Clash of Clans API coverage, improved request reliability, stronger TypeScript support, and a dependency-free runtime.
+
+### Highlights
+
+- **Configurable `ClashOfClansClient`** with support for API tokens, timeouts, retries, and caching.
+- **Expanded API coverage** for clans, players, leagues, locations, labels, and Gold Pass data.
+- **Improved request reliability** with automatic retries, bounded backoff, `Retry-After` support, timeouts, and cancellation.
+- **Optional in-memory caching** with configurable limits and concurrent request de-duplication.
+- **Stronger validation and error handling** for tags, IDs, seasons, pagination, player tokens, and API failures.
+- **Zero runtime dependencies** by switching to Node.js's built-in `fetch`.
+- **Improved TypeScript support** with public package-root exports, endpoint types, request options, error classes, and generated declarations.
+- **Updated development workflow** with build, linting, formatting, testing, coverage, CI, and npm publishing support.
+
+### Breaking Changes
+
+- Requires **Node.js 22 or newer**.
+- Public APIs should now be imported from the package root.
+- The options-object constructor is now the recommended setup; passing the token string directly remains supported.
+- Use the new endpoint groups and method names exposed by `ClashOfClansClient`, such as `clans.get()`, `players.get()`, `leagues.get()`, and `locations.getLocations()`.
+- Use `RequestOptions` for individual requests and `PaginatedRequestOptions` for cursor-based lists.
+
+See the [full changelog](https://github.com/Knightplayzz/clash-of-clans/blob/main/CHANGELOG.md) for all changes and migration details.
+
+**Upgrade:** `npm install clash-of-clans-node@2.0.0`
+
 ## V1.1.3
 
 ### Added labels and getClansCapitalRankingsByLocationId
